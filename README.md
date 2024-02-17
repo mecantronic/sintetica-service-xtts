@@ -4,7 +4,7 @@ Welcome to the ⓍXTTS fine tuning repository! 👋
 
 [ⓍTTS](https://docs.coqui.ai/en/latest/models/xtts.html) is a super cool Text-to-Speech model that lets you clone voices in different languages by using just a quick 3-second audio clip. Built on the 🐢Tortoise, ⓍTTS has important model changes that make cross-language voice cloning and multi-lingual speech generation super easy. There is no need for an excessive amount of training data that spans countless hours.
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github.com/mecantronic/sintetica-service-xtts/blob/main/notebooks/xtts_finetuning.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/mecantronic/sintetica-service-xtts/blob/main/notebooks/xtts_finetuning.ipynb)
 
 ## Installation 🛠️
 1. Clone the repository:
