@@ -4,6 +4,8 @@ Welcome to the ⓍXTTS fine tuning repository! 👋
 
 [ⓍTTS](https://docs.coqui.ai/en/latest/models/xtts.html) is a super cool Text-to-Speech model that lets you clone voices in different languages by using just a quick 3-second audio clip. Built on the 🐢Tortoise, ⓍTTS has important model changes that make cross-language voice cloning and multi-lingual speech generation super easy. There is no need for an excessive amount of training data that spans countless hours.
 
+[Hugging Face](https://huggingface.co/coqui/XTTS-v2)
+
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/mecantronic/sintetica-service-xtts/blob/main/notebooks/xtts_finetuning.ipynb)
 
 ## Installation 🛠️
@@ -25,8 +27,8 @@ Welcome to the ⓍXTTS fine tuning repository! 👋
 ```
 5. Install the required dependencies:
 ```bash
-    pip install --use-deprecated=legacy-resolver -q -r sintetica-service-xtts/requirements_tts.txt
-    pip install --use-deprecated=legacy-resolver -q -r sintetica-service-xtts/requirements_xtts.txt
+    pip install --use-deprecated=legacy-resolver -q -e TTS
+    pip install --use-deprecated=legacy-resolver -q -r TTS/TTS/demos/xtts_ft_demo/requirements.txt
     pip install -q typing_extensions==4.8 numpy==1.26.2
 ```
 
@@ -53,15 +55,15 @@ Follow these steps to unleash the power of ⓍXTTS:
 Access the live Gradio demo here after running the provided commands.
 
 ```bash
-    python3 xtts_finetunning.py --batch_size 2 --num_epochs 6
+    python3 TTS/TTS/demos/xtts_ft_demo/xtts_finetunning.py --batch_size 2 --num_epochs 6
 ```
 
 ## Command Line Arguments 🛠️
 You can customize the behavior of the XTTS Fine-Tuning Demo using the following command line arguments:
 
---port: Port to run the Gradio demo. Default: 5003.
---out_path: Output path (where data and checkpoints will be saved). Default: /tmp/xtts_ft/.
---num_epochs: Number of epochs to train. Default: 10.
---batch_size: Batch size. Default: 4.
---grad_acumm: Gradient accumulation steps. Default: 1.
---max_audio_length: Maximum permitted audio size in seconds. Default: 11.
+* --port: Port to run the Gradio demo. Default: 5003.
+* --out_path: Output path (where data and checkpoints will be saved). Default: /tmp/xtts_ft/.
+* --num_epochs: Number of epochs to train. Default: 10.
+* --batch_size: Batch size. Default: 4.
+* --grad_acumm: Gradient accumulation steps. Default: 1.
+* --max_audio_length: Maximum permitted audio size in seconds. Default: 11.
