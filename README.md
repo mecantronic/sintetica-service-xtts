@@ -11,7 +11,7 @@ Welcome to the ⓍXTTS fine tuning repository! 👋
 ## Installation 🛠️
 1. Clone the repository:
 ```bash
-    git clone --branch main -q  https://github.com/mecantronic/sintetica-service-xtts.git
+    git clone --recursive  https://github.com/mecantronic/sintetica-service-xtts.git
 ```
 2. Navigate to the project directory:
 ```bash
@@ -55,7 +55,7 @@ Follow these steps to unleash the power of ⓍXTTS:
 Access the live Gradio demo here after running the provided commands.
 
 ```bash
-    python3 TTS/TTS/demos/xtts_ft_demo/xtts_finetunning.py --batch_size 2 --num_epochs 6
+    python3 xtts_finetunnig.py --batch_size 2 --num_epochs 6
 ```
 
 ## Command Line Arguments 🛠️
