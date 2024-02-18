@@ -1,0 +1,4 @@
+[submodule "TTS"]
+	path = TTS
+	url = https://github.com/coqui-ai/TTS.git
+	branch = xtts_demo
