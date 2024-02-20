@@ -68,7 +68,7 @@ def run_tts(lang, tts_text, speaker_audio_file):
     if XTTS_MODEL is None or not speaker_audio_file:
         return "You need to run the previous step to load the model !!", None, None
 
-    gpt_cond_latent, speaker_embedding = XTTS_MODEL.get_conditioning_latents(audio_path=speaker_audio_file, gpt_cond_len=XTTS_MODEL.config.gpt_cond_len, max_ref_length=XTTS_MODEL.config.max_ref_len, sound_norm_refs=XTTS_MODEL.config.sound_norm_refs)
+    gpt_cond_latent, speaker_embedding = XTTS_MODEL.get_conditioning_latents(audio_path=speaker_audio_file, gpt_cond_len=XTTS_MODEL.config.gpt_cond_len, max_ref_length=XTTS_MODEL.config.max_ref_len, sound_norm_refs=XTTS_MODEL.config.sound_norm_refs, gpt_cond_chunk_len = XTTS_MODEL.config.gpt_cond_chunk_len)
     out = XTTS_MODEL.inference(
         text=tts_text,
         language=lang,
@@ -79,6 +79,8 @@ def run_tts(lang, tts_text, speaker_audio_file):
         repetition_penalty=XTTS_MODEL.config.repetition_penalty,
         top_k=XTTS_MODEL.config.top_k,
         top_p=XTTS_MODEL.config.top_p,
+        enable_text_splitting=True,
+        speed=1.0,
     )
 
     with tempfile.NamedTemporaryFile(suffix=".wav", delete=False) as fp:
